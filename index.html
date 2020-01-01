@@ -1,0 +1,427 @@
+<html>
+
+
+
+<!-- 啦啦啦，欢迎你来参观本垃圾的代码~ -->
+<!-- 在你阅读之前，注意不要被我的代码暴力到哦~ -->
+<!-- 汪！---黑嘴如此叫道 -->
+<!-- 汪~ ---黑嘴如此叫道 -->
+<!-- 汪？---黑嘴如此叫道 -->
+<!-- 汪~！---黑嘴如此叫道 -->
+<!-- 汪~？---黑嘴如此叫道 -->
+<!-- 汪！？---黑嘴如此叫道 -->
+<!-- 嗷！---黑嘴如此叫道 -->
+<!-- 喵~ ---黑嘴如此叫道 -->
+<!-- 喵！---黑嘴如此叫道 -->
+<!-- 喵呜~！---黑嘴如此叫道 -->
+<!-- 汪... ---黑嘴如此叫道 -->
+<!-- 行了 别叫了 _(:з」∠)_ -->
+
+
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Error 404</title>
+
+<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/404Power.css"></link>
+<!-- 虽然说我引用了Bootstrap，但是我却根本没用到（其实是不懂用_(:з」∠)_）-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<style type="text/css"> 
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(359deg)
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg)
+    }
+
+    to {
+        -moz-transform: rotate(359deg)
+    }
+}
+
+@-o-keyframes rotation {
+    from {
+        -o-transform: rotate(0deg)
+    }
+
+    to {
+        -o-transform: rotate(359deg)
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(359deg)
+    }
+}
+.fade.in {
+    filter: alpha(opacity=100);
+}
+.fade.in {
+    opacity: 1;
+}
+.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+    .fade.in .spinner, .fade.in .spinner-small {
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+}
+.spinner{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px -20px 0 0;
+    border: 2px solid #fff;
+    border-top: 2px solid #24B498;
+    border-radius: 100%;
+}
+#page-loader.fade.in {
+    display: block;
+}
+#page-loader.fade {
+    display: none;
+}
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    height:100%;
+    background: rgb(32,32,32);
+    z-index: 999999;
+}
+</style>
+
+<script type="text/javascript">  
+  var WH=$(document.body).height()
+  var tabfocus;
+
+  function locations(number){
+    var ntop = 0;
+    for(var i=1;i<number;i++){  
+        switch(i){
+          case 1:
+            ntop += 600;
+            break;
+          case 3:
+            ntop += 900;
+            break;
+          default:
+            ntop += 600;
+            break;
+        }
+    }
+    //ntop += (WH / 2);
+    window.scrollTo({ 
+      top: ntop,
+      behavior: "smooth" 
+    });
+  }
+
+  window.onresize = function updateSize(){
+    WH=$(document.body).height()
+    var objs = document.getElementsByTagName("div");
+    var ntop = 0;
+    ntop += $(window).height();
+    for(var i=0;i<objs.length;i++){  
+      if(objs[i].dataset.index > 0){
+        // 因为让第一个div的height为100%，不得不这么做了233
+        objs[i].style.top = ntop;
+        switch(objs[i].dataset.index){
+	    	case "1":
+	    		ntop += 600;
+	    		break;
+	    	case "3":
+	    		ntop += 900;
+	    		break;
+    	}
+      }
+    }
+  }
+
+  window.onload = function loadcomplete(){
+  	document.getElementById('page-loader').className='fade'
+  }
+
+  window.onscroll = function ScreenAnimation(){  
+    var objs = document.getElementsByTagName("div");  
+    var top = 0;
+    var fl = 0;
+    var scrollt = document.body.scrollTop || document.documentElement.scrollTop;
+
+    var mem;
+
+    for(var i=0;i<objs.length;i++){  
+
+      top = objs[i].getBoundingClientRect().top;
+
+      if(((top <= WH / 2) || (objs[i].getBoundingClientRect().bottom <= WH))){ 
+        //focus
+        if(objs[i].dataset.sectionindex > 0){
+          fl = $(document.body).width() / 2 - (60 * 4 + 15 * 3 * 2 + 4 * 3) / 2 + (objs[i].dataset.sectionindex - 1) * (60 + 15 * 2 + 4);
+        }
+      }
+
+      top = objs[i].getBoundingClientRect().top;
+
+      if(((top <= WH / 2) || (objs[i].getBoundingClientRect().bottom <= WH))){ 
+
+        //在屏幕内！动画就绪！汪~
+        mem = objs[i].getElementsByTagName("*"); 
+        for(var s=0;s<mem.length;s++){
+          if(mem[s].dataset.a >= 1){
+            mem[s].style.animationName=mem[s].dataset.animate.split(',')[0];
+            mem[s].style.animationDuration=mem[s].dataset.animate.split(',')[1];
+            mem[s].style.animationTimingFunction=mem[s].dataset.animate.split(',')[2];
+          }
+        }
+
+      } 
+      else{
+        //如果要求重新设置动画则重置~
+        mem = objs[i].getElementsByTagName("*"); 
+        for(var s=0;s<mem.length;s++){
+          if(mem[s].dataset.a == "1"){mem[s].style.animationName="";}
+        }
+      }
+
+
+    }
+
+    if(fl != 0){tabfocus.style.left = fl;}
+    return;  
+  }  
+  
+  window.onpageshow = function fistAnimate(){
+    tabfocus = document.getElementById("tabfocus"); 
+    window.onresize();
+    window.onscroll();
+  }
+
+  function BMFound(){
+    // 汪！在代码里被你提前发现啦！
+    alert("汪~！被你发现啦！");
+  }
+
+</script>
+
+</head>
+
+<body>
+  <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+  <div id="topbar" class="topbar" style="z-index:999;">
+    <img class="LOGO" src="img/Face.jpg">
+    <a onclick="javascript:locations(1);"><span id="tab1" style="animation-delay: 0s" class="topspan" data-a="2" data-animate="RunUp,0.5s,linear">主页</span></a>
+    <a onclick="javascript:locations(2);"><span id="tab2" style="animation-delay: 0.1s" class="topspan" data-a="2" data-animate="RunUp,0.5s,linear">动态</span></a>
+    <a onclick="javascript:locations(3);"><span id="tab3" style="animation-delay: 0.2s" class="topspan" data-a="2" data-animate="RunUp,0.5s,linear">项目</span></a>
+    <a onclick="javascript:locations(4);"><span id="tab4" style="animation-delay: 0.3s" class="topspan" data-a="2" data-animate="RunUp,0.5s,linear">关于</span></a>
+    <span id="tabfocus" style="animation-delay: 0s;background-color: rgb(241,77,31);width:60px;height:3px;padding: 0px;position: absolute;left:150px;bottom:0px;margin: 0px;" class="topspan" data-a="2" data-animate="RunUp,0.5s,linear">
+  </div>
+
+  <div class="maindiv" style="background: linear-gradient(to right, rgba(0,176,246,0), rgb(0,232,119))"><a></a></div>
+
+
+    <!-- 主页面~ -->
+    <div data-sectionindex="1" id="main" class="maindiv" data-a="2" data-animate="MainSectionColor,1s,linear">
+
+      <!-- My Friends are here -->
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=1361778219&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.7;animation-iteration-count: infinite;left:10%;animation-delay: 1s;" data-a="2" data-animate="FriendFly,65s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=70851867&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.8;animation-iteration-count: infinite;left:6%;animation-delay: 4s;" data-a="2" data-animate="FriendFly,60s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=1257472418&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.75;animation-iteration-count: infinite;left:-15%;animation-delay: 3s;" data-a="2" data-animate="FriendFly,70s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=2529874419&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.72;animation-iteration-count: infinite;left:20%;animation-delay: 6s;" data-a="2" data-animate="FriendFly,72s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=937697555&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.75;animation-iteration-count: infinite;left:-20%;animation-delay: 3s;" data-a="2" data-animate="FriendFly,50s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=318515692&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.72;animation-iteration-count: infinite;left:-10%;animation-delay: 5s;" data-a="2" data-animate="FriendFly,67s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=71968243&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.8;animation-iteration-count: infinite;left:-20%;animation-delay: 4s;" data-a="2" data-animate="FriendFly,55s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=603678397&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.76;animation-iteration-count: infinite;left:10%;animation-delay: 2s;" data-a="2" data-animate="FriendFly,52s,">
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=2595732040&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.82;animation-iteration-count: infinite;left:22%;animation-delay: 0s;" data-a="2" data-animate="FriendFly,62s,">   
+      <img src="http://q2.qlogo.cn/headimg_dl?bs=0&dst_uin=3108164427&dst_uin=0&;dst_uin=0&spec=100&url_enc=0&referer=bu_interface&term_type=PC" class="BM" style="opacity: 0.78;animation-iteration-count: infinite;left:15%;animation-delay: 0s;" data-a="2" data-animate="FriendFly,56s,">  
+
+      <br>
+      <span class="waitspan" style="animation-delay:0.5s;font-size:36px;color:rgb(255,255,255);position: relative;top: 32%;" data-a="2" data-animate="RunUp,0.5s,linear">
+        这里是YOUR['Error 404']的神秘空间
+      </span>
+      <br>
+      <span class="waitspan" style="animation-delay:2s;color:rgba(255,255,255,.9);position: relative;top: 37%;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        // all these are my art works == bug;
+      </span>
+      <br>
+      <img src="img/next.png" style="opacity: 0;width:30px;height:13px;position: relative;top: 62%;animation-iteration-count: infinite;animation-delay:2s;" data-a="2" data-animate="Quick,0.5s,linear">
+      <br>
+      <a onclick="BMFound()"><img src="img/bm.png" class="BM" id="BM" data-a="2" data-animate="BMFly,120s,"></a>
+
+    </div>
+
+    <!-- 近期更新~ -->
+    <div data-sectionindex="2" id="update" class="mori2div" style="position: absolute;" data-index="1">
+      <!-- <img class="recentupdate" src="img/update.png" data-a="2" data-animate="FadeInPic,0.3s,linear" style="animation-fill-mode: forwards;animation-delay:0.5s;">-->
+
+      <img class="recentupdatemori" src="img/update.png" data-a="2" data-animate="FadeInPic,0.3s,linear">
+
+      <span class="waitspan" style="animation-delay:1s;color:rgb(255,255,255);font-size:24px;top: 20px;left: 20px;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        近期更新
+      </span>
+
+      <span class="waitspan" style="animation-delay:1s;color:rgb(255,255,255);font-size:36px;left: 120px;top: 26%;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        Moristory II
+      </span>
+      <span class="waitspan" style="animation-delay:2s;color:rgba(255,255,255,.8);left: 122px;top: 35%;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        即将开工
+      </span>
+      <span class="waitspan" style="animation-delay:2s;color:rgba(255,255,255,.8);left: 122px;top: 46%;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        一场穿越时空的旅行。
+      </span>
+      <a target="_blank" href=""><button class="buttonmori" style="opacity: 0;animation-delay:2s;left: 108px;top: 63%;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        <span>即将推出</span>
+      </button></a>
+      <!-- <img src="img/icon01.png" class="image" style="opacity: 0;animation-delay:3s;right:20px;top: 20px;animation-fill-mode: forwards;" data-a="2" data-animate="FadeIn,0.5s,linear">
+      <img src="img/icon02.png" class="image" style="opacity: 0;animation-delay:3.5s;right:100px;top: 20px;animation-fill-mode: forwards;" data-a="2" data-animate="FadeIn,0.5s,linear">
+      <img src="img/icon03.png" class="image" style="opacity: 0;animation-delay:4s;right:180px;top: 20px;animation-fill-mode: forwards;" data-a="2" data-animate="FadeIn,0.5s,linear"> -->
+    </div>
+    <br>
+
+    <!-- 我的作品~ -->
+    <div data-sectionindex="3" id="apps" class="sediv" style="position:absolute;background: linear-gradient(to bottom right,rgba(24,177,255,.8),rgba(221,18,255,.8));top:100%;height:900px;" data-index="3">
+      <span class="waitspan" style="animation-delay:0s;color:rgba(255,255,255.8);font-size:24px;top: 20px;left: 20px;" data-a="2" data-animate="FadeIn,0.5s,linear">
+        我的项目
+      </span>
+
+      <img src="img/mori2.png" class="bimage" style="opacity: 0;animation-delay:0.5s;left:80px;top: 100px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(255,255,255);font-size:24px;top: 118px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Moristory II / 20.7.24
+      </span>
+      <span class="waitspan" style="animation-delay:0.5s;color:rgba(255,255,255,.7);font-size:16px;top: 158px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        一场穿越时空的旅行。
+      </span>
+      <a target="_blank" href="https://github.com/buger404/Emerald"><button class="buttonmori" style="opacity: 0;animation-delay:0.5s;right: 108px;top: 128px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>即将推出</span>
+      </button></a>
+
+      <img src="img/mori.png" class="bimage" style="opacity: 0;animation-delay:0.5s;left:80px;top: 200px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(255,255,255);font-size:24px;top: 218px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Moristory 1.2.5 / 19.7.31
+      </span>
+      <span class="waitspan" style="animation-delay:0.5s;color:rgba(255,255,255,.7);font-size:16px;top: 258px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        发生在一个遥远的神秘行星上的故事。（提取码：3b6q）
+      </span>
+      <a target="_blank" href="https://pan.baidu.com/s/1fj6Byi_RdxPNfgeRmFeb5w"><button class="button" style="opacity: 0;animation-delay:0.5s;right: 108px;top: 228px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>下载</span>
+      </button></a>
+
+      <img src="img/emerald.png" class="bimage" style="opacity: 0;animation-delay:0.5s;left:80px;top: 300px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(255,255,255);font-size:24px;top: 318px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Emerald Weekly.1215 / 19.12.15
+      </span>
+      <span class="waitspan" style="animation-delay:0.5s;color:rgba(255,255,255,.7);font-size:16px;top: 358px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        为Visual Basic 6.0而设计的游戏开发框架。
+      </span>
+      <a target="_blank" href="https://github.com/buger404/Emerald/releases"><button class="button" style="opacity: 0;animation-delay:0.5s;right: 108px;top: 328px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>获取源码</span>
+      </button></a>
+
+      <img src="img/dogtools.png" class="bimage" style="opacity: 0;animation-delay:0.5s;left:80px;top: 400px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(255,255,255);font-size:24px;top: 418px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Dog Tools Ver.0.1.0 / 19.1.27
+      </span>
+      <span class="waitspan" style="animation-delay:0.5s;color:rgba(255,255,255,.7);font-size:16px;top: 458px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        记录你的电脑上的一切活动。
+      </span>
+      <a target="_blank" href="https://pan.baidu.com/s/1qsycPaiRTc1Wsek7LvX9DQ"><button class="button" style="opacity: 0;animation-delay:0.5s;right: 108px;top: 428px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>下载</span>
+      </button></a>
+
+      <img src="img/muing2.png" class="bimage" style="opacity: 0;animation-delay:1s;left:80px;top: 500px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:1s;color:rgb(255,255,255);font-size:24px;top: 518px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Muing II beta 19.0105 / 19.1.5
+      </span>
+      <span class="waitspan" style="animation-delay:1s;color:rgba(255,255,255,.7);font-size:16px;top: 558px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        在疯狂的音乐中玩到飞起！
+      </span>
+      <a target="_blank" href="https://pan.baidu.com/s/13fyq_Du7e7STajAKnu1QoQ"><button class="button" style="opacity: 0;animation-delay:1s;right: 108px;top: 528px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>下载</span>
+      </button></a>
+
+      <img src="img/easoft.png" class="bimage" style="opacity: 0;animation-delay:1.5s;left:80px;top: 600px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:1.5s;color:rgb(255,255,255);font-size:24px;top: 618px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Easoft RC 1.6 / 18.11.10
+      </span>
+      <span class="waitspan" style="animation-delay:1.5s;color:rgba(255,255,255,.7);font-size:16px;top: 658px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        为Visual Basic 6.0而设计的软件界面框架。
+      </span>
+      <a target="_blank" href="https://pan.baidu.com/s/1fbYu88kkzWYpXQm8YXvArQ"><button class="button" style="opacity: 0;animation-delay:1.5s;right: 108px;top: 628px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>下载</span>
+      </button></a>
+
+      <img src="img/monster2.png" class="bimage" style="opacity: 0;animation-delay:2s;left:80px;top: 700px;animation-fill-mode: forwards;" data-a="2" data-animate="RunIn,0.3s,linear">
+      <span class="waitspan" style="animation-delay:2s;color:rgb(255,255,255);font-size:24px;top: 718px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        Monster Fight II RC 1.3 / 18.5.25
+      </span>
+      <span class="waitspan" style="animation-delay:2s;color:rgba(255,255,255,.7);font-size:16px;top: 758px;left: 210px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        生成你的魔兽来对抗邪恶的404吧！
+      </span>
+      <a target="_blank" href="https://pan.baidu.com/s/1mlRSwGNa3kIJBx51u_iAsg"><button class="button" style="opacity: 0;animation-delay:2s;right: 108px;top: 728px;animation-fill-mode: forwards;padding-left: 40px;padding-right: 40px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        <span>下载</span>
+      </button></a>
+
+    </div>
+
+    <!-- 关于我 -->
+    <div data-sectionindex="4" id="about" class="sediv" style="position: absolute;top:100%;height:220px;" data-index="2">
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(60,60,60);left: 30px;top: 22px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        关于人家
+      </span>
+      <br>
+      <span class="waitspan" style="animation-delay:0.5s;color:rgb(160,160,160);left: 30px;top: 47px;" data-a="2" data-animate="RunIn,0.3s,linear">
+        该网站由 Error 404(QQ 1361778219) / E-mail:ris_vb@126.com 制作
+      </span>
+      <span class="waitspan" style="text-align: right;animation-delay:1.2s;color:rgb(60,60,60);right: 30px;top: 80px;" data-a="2" data-animate="RunIn2,0.3s,linear">
+        我亲爱的伙伴们
+      </span>
+      <span class="linkspan" style="text-align: right;animation-delay:1.5s;right: 30px;top: 105px;" data-a="2" data-animate="RunIn2,0.3s,linear">
+        QQ群 : Inter.Net (554272507)
+      </span>
+      <a href="https://trisolaris233.github.io/" target="_blank"><span class="linkspan" style="text-align: right;animation-delay:1.8s;right: 30px;top: 130px;" data-a="2" data-animate="RunIn2,0.3s,linear">
+        大佬 : 阳光加冰的博客
+      </span></a>
+      <a href="http://www.dimojang.com/" target="_blank"><span class="linkspan" style="text-align: right;animation-delay:2.2s;right: 30px;top: 155px;" data-a="2" data-animate="RunIn2,0.3s,linear">
+        大佬 : 迪莫的博客
+      </span></a>
+
+    </div>
+    <br>
+
+</body>
+
+</html>
