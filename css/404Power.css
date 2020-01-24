@@ -254,9 +254,9 @@
   font-family:"Dosis-Light";
   display: inline-block;
   border-radius: 40px;
-  background-color: rgb(241,77,31);
+  background-color: rgba(255,255,255,.6);
   border: none;
-  color: #FFFFFF;
+  color: rgb(32,32,32);
   text-align: center;
   font-size: 16px;
   padding: 10px;
@@ -264,7 +264,7 @@
   cursor: pointer;
   margin: 15px;
   opacity: 1;
-  box-shadow: 0px 0px 8px rgba(106,215,235,0);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0);
   position: absolute;
 }
 
@@ -272,8 +272,8 @@
   opacity: 0.7;
   border-radius: 0px;
   transition: 0.5s;
-  background-color: rgb(106,56,251);
-  box-shadow: 0px 0px 8px rgb(106,56,251);
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0px 0px 8px rgba(0,0,0,.5);
 }
 
 .button span {
@@ -306,9 +306,9 @@
   font-family:"Dosis-Light";
   display: inline-block;
   border-radius: 40px;
-  background-color: rgba(255,255,255,.4);
+  background-color: rgba(255,255,255,.6);
   border: none;
-  color: rgb(64,64,64);
+  color: rgb(32,32,32);
   text-align: center;
   font-size: 16px;
   padding: 10px;
