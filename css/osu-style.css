@@ -1,0 +1,25 @@
+.maindiv{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    --font-default-override: var(--font-default-zh);
+    --font-default: Torus,Inter,"Helvetica Neue",Tahoma,Arial,"Hiragino Kaku Gothic ProN",Meiryo,"Microsoft YaHei","Apple SD Gothic Neo",sans-serif;
+    --font-default-vi: Quicksand,Torus,Inter,"Helvetica Neue",Tahoma,Arial,"PingFang TC","Microsoft JhengHei","Apple SD Gothic Neo",system-ui,sans-serif;
+    --font-default-zh: Torus,Inter,"Helvetica Neue",Tahoma,Arial,"Hiragino Sans GB","Microsoft YaHei","Apple SD Gothic Neo",system-ui,sans-serif;
+    --font-default-zh-tw: Torus,Inter,"Helvetica Neue",Tahoma,Arial,"PingFang TC","Microsoft JhengHei","Apple SD Gothic Neo",system-ui,sans-serif;
+    --font-content: Inter,sans-serif;
+    --base-hue: 255;
+    --base-hue-deg: 255deg;
+    --vh: 7.31px;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+    height: 100%;
+    font-family: var(--font-default-override,var(--font-default));
+    overflow-y: scroll;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    transition: filter .2s ease-in-out,opacity .2s ease-in-out,-webkit-filter .2s ease-in-out;
+    background-color: hsl(var(--base-hue),10%,10%);
+}
