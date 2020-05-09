@@ -1,232 +1,179 @@
-<!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
-    <head>
-        <meta name="msapplication-TileColor" content="#603cba">
-        <meta name="theme-color" content="hsl(255, 10%, 40%)"> 
-        <meta charset="utf-8">
-        <meta name="description" content="Buger404/Error 404的个人老窝">
-        <meta name="keywords" content="buger404, Buger404, Error 404">
-        <link rel="stylesheet" media="all" href="css/osu-skin.css">
-        <link rel="stylesheet" media="all" href="css/osu-style.css">
-        <link rel="stylesheet" media="all" href="css/osu-app.css" data-turbolinks-track="reload">
-        <title>Buger404</title>
-    </head>
+<html lang="zh-cn" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Buger404の狗窝</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<style type="text/css"> 
+			@-webkit-keyframes rotation {
+			    from {
+			        -webkit-transform: rotate(0deg)
+			    }
 
-    <body class="
-        osu-layout
-        osu-layout--body
-        t-section
-        action-index
-        osu-layout--body-landing
-    ">
-        <style>
-            :root {
-                --base-hue: 255;
-                --base-hue-deg: 255deg;
-            }
-        </style>
-        <div id="overlay" class="blackout blackout--overlay" style="display: none;"></div>
-        <div class="blackout js-blackout" data-visibility="hidden"></div>
-        <div class="osu-layout__section osu-layout__section--full js-content home_index">
-            <nav class="osu-layout__row">
-            <div class="landing-nav hidden-xs">
-                <div class="landing-nav__section">
-                        <a href="#" class="landing-nav__link landing-nav__link--bold">
-                            主页
-                        </a>
-                        <a href="#footer" class="landing-nav__link ">
-                            友联
-                        </a>
-                        <a href="https://github.com/buger404" class="landing-nav__link ">
-                            Github
-                        </a>
-                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1361778219&site=qq&menu=yes" class="landing-nav__link ">
-                            QQ
-                        </a>
-                    
-                </div>
-            </div>
-            </nav>
+			    to {
+			        -webkit-transform: rotate(359deg)
+			    }
+			}
 
-            <div class="osu-page">
-                <div class="landing-hero">
-                    <div class="landing-hero__bg-container">
-                        <div class="landing-hero__bg-inner-container js-scale" data-scale="ws" style="height: 562.5px; width: 1000px;">
-                            
-                            <video class="landing-hero__bg js-autoplay" autoplay="" loop="" muted="" playsinline="" src="css/media/mori2.mp4"></video>
-                        </div>
-                    </div>
-        
-                    <div class="landing-hero__pippi">
-                        <div class="landing-hero__pippi-logo"></div>
-                    </div>
-        
-                    <div class="landing-hero__info">
-                        Moristory II 游戏构建中!
-                    </div>
-        
-                    <div class="landing-hero__messages">
-                        <div class="landing-hero__message-extra-container">
-                            <div class="landing-hero__message-extra landing-hero__message-extra--top">
-                                <div class="landing-hero__logo"></div>
-                            </div>
-                        </div>
-        
-                        <div class="landing-hero__slogan">
-                            <h1 class="landing-hero__slogan-main">
-                                Buger404 の 老窝
-                            </h1>
-        
-                            <h2 class="landing-hero__slogan-sub">
-                                专业BUG设计师
-                            </h2>
-                        </div>
-        
-                        <div class="landing-hero__message-extra-container">
-                            <div class="landing-hero__message-extra landing-hero__message-extra--bottom">
-                                <a href="https://github.com/buger404" class="btn-osu-big btn-osu-big--download-landing">
-                                    <span class="btn-osu-big__content">
-                                        <span class="btn-osu-big__left">
-                                            <span class="btn-osu-big__text-top">
-                                                Github
-                                            </span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-            <div class="osu-page js-react--landing-news" data-react-turbolinks-loaded="1">
-                <div class="landing-news">
-                    <div class="landing-news__posts">
-                        <a class="news-card news-card--landing news-card--hover" href="https://github.com/buger404/moristory2">
-                            <div class="news-card__cover-container">
-                                <img class="news-card__cover" src="post/mori2.png">
-                                <div class="news-card__time js-tooltip-time">2020年7月24日</div>
-                            </div>
-                            <div class="news-card__main">
-                                <div class="news-card__row news-card__row--title">Moristory2 - 一场跨越时空的旅行</div>
-                                <div class="news-card__row news-card__row--preview"></div>
-                                <div class="news-card__row news-card__row--author">C#, Unity</div>
-                            </div>
-                        </a>
-                    </div>
+			@-moz-keyframes rotation {
+			    from {
+			        -moz-transform: rotate(0deg)
+			    }
 
-                    <div class="landing-news__posts">
-                        <a class="news-card news-card--landing news-card--hover" href="https://github.com/buger404/experiments">
-                            <div class="news-card__cover-container">
-                                <img class="news-card__cover" src="post/experiments.png">
-                                <div class="news-card__time js-tooltip-time">持续填坑中</div>
-                            </div>
-                            <div class="news-card__main">
-                                <div class="news-card__row news-card__row--title">Experiments - 我的垃圾实验项目</div>
-                                <div class="news-card__row news-card__row--preview"></div>
-                                <div class="news-card__row news-card__row--author">vb6, c++, c#</div>
-                            </div>
-                        </a>
-                        <a class="news-card news-card--landing news-card--hover" href="https://github.com/buger404/Emerald">
-                            <div class="news-card__cover-container">
-                                <img class="news-card__cover" src="post/emerald.png">
-                                <div class="news-card__time js-tooltip-time">参与比赛中</div>
-                            </div>
-                            <div class="news-card__main">
-                                <div class="news-card__row news-card__row--title">Emerald - UI/游戏框架</div>
-                                <div class="news-card__row news-card__row--preview"></div>
-                                <div class="news-card__row news-card__row--author">vb6, GDI, GDI+, bass</div>
-                            </div>
-                        </a>
-                        <a class="news-card news-card--landing news-card--hover" href="https://github.com/buger404/intallkrobot">
-                            <div class="news-card__cover-container">
-                                <img class="news-card__cover" src="post/intallk.png">
-                                <div class="news-card__time js-tooltip-time">已弃坑</div>
-                            </div>
-                            <div class="news-card__main">
-                                <div class="news-card__row news-card__row--title">Intallk - 黑嘴智能扰民机器人专业加强版</div>
-                                <div class="news-card__row news-card__row--preview"></div>
-                                <div class="news-card__row news-card__row--author">C#, CoolQ</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="landing-news__link">
-                        <a href="https://github.com/buger404" class="show-more-link show-more-link--no-icon">
-                            <span class="show-more-link__spinner">
-                                <div class="la-ball-clip-rotate"></div>
-                            </span>
-                            <span class="show-more-link__label">
-                                <span class="show-more-link__label-icon show-more-link__label-icon--left">
-                                    <span class="fas fa-angle-down"></span>
-                                </span>
-                                <span class="show-more-link__label-text">在Github上查看所有repo</span>
-                                <span class="show-more-link__label-icon show-more-link__label-icon--right">
-                                    <span class="fas fa-angle-down"></span>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <footer id="footer" class="osu-layout__section osu-layout__section--landing-footer">
-                <div class="osu-layout__row osu-layout__row--landing-sitemap landing-sitemap">
-                    <div class="osu-layout__col-container osu-layout__col-container--landing-sitemap">
-                        <div class="osu-layout__col osu-layout__col--sm-4">
-                            <ul class="landing-sitemap__list">
-                                <li class="landing-sitemap__item">
-                                    <div class="landing-sitemap__header">常用</div>
-                                </li>
-                                    <li class="landing-sitemap__item"><a href="https://osu.ppy.sh/home" class="landing-sitemap__link">Osu!</a></li>
-                                    <li class="landing-sitemap__item"><a href="https://www.flaticon.com" class="landing-sitemap__link">FlatIcon</a></li>
-                                    <li class="landing-sitemap__item"><a href="https://getwallpapers.com" class="landing-sitemap__link">GetWallpapers</a></li>
-                                    <li class="landing-sitemap__item"><a href="https://webgradients.com" class="landing-sitemap__link">WebGradients</a></li>
-                            </ul>
-                        </div>
-                        <div class="osu-layout__col osu-layout__col--sm-4">
-                            <ul class="landing-sitemap__list">
-                                <li class="landing-sitemap__item">
-                                    <div class="landing-sitemap__header">我的邻居</div>
-                                </li>
-                                <li class="landing-sitemap__item"><a href="https://trisolaris233.github.io/" class="landing-sitemap__link">阳光加冰</a></li>
-                                <li class="landing-sitemap__item"><a href="http://yorkin.cool/" class="landing-sitemap__link">方程</a></li>
-                                <li class="landing-sitemap__item"><a href="http://www.dimojang.com/" class="landing-sitemap__link">迪莫</a></li>
-                                <li class="landing-sitemap__item"><a href="http://tan90.pw/" class="landing-sitemap__link">Tan90</a></li>
-                                <li class="landing-sitemap__item"><a href="https://server.nutr1t07.codes/" class="landing-sitemap__link">λ5af40g</a></li>
-                                <li class="landing-sitemap__item"><a href="https://slacksoft.iicp.net/" class="landing-sitemap__link">番茄</a></li>
-                                <li class="landing-sitemap__item"><a href="https://xxs2.cn/" class="landing-sitemap__link">小学生</a></li>
-                                <li class="landing-sitemap__item"><a href="https://tyningling.github.io/" class="landing-sitemap__link">小林</a></li>
-                                <li class="landing-sitemap__item"><a href="https://lhr.wiki/" class="landing-sitemap__link">Eric</a></li>
-                                <li class="landing-sitemap__item"><a href="http://sewailer.gitee.io/" class="landing-sitemap__link">SWL</a></li>
-                            </ul>
-                        </div>
-                        <div class="osu-layout__col osu-layout__col--sm-4">
-                            <ul class="landing-sitemap__list">
-                                <li class="landing-sitemap__item">
-                                    <div class="landing-sitemap__header">感兴趣的repo</div>
-                                </li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/Kat-GUI/KatLayout" class="landing-sitemap__link">Kat-GUI/KatLayout</a></li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/osudroid/osu-droid" class="landing-sitemap__link">osudroid/osu-droid</a></li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/labsol/Inter.Net.Wiki" class="landing-sitemap__link">labsol/Inter.Net.Wiki</a></li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/SweetIceLolly/DragControlsIDE-v2" class="landing-sitemap__link">SweetIceLolly/DragControlsIDE-v2</a></li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/IDXGI/DXUI-Library" class="landing-sitemap__link">IDXGI/DXUI-Library</a></li>
-                                <li class="landing-sitemap__item"><a href="https://github.com/YerongAI/Office-Tool" class="landing-sitemap__link">YerongAI/Office-Tool</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="landing-footer-social">
-                    <a href="https://github.com/buger404" class="landing-footer-social__icon landing-footer-social__icon--support">
-                        <svg style="fill:rgb(255,255,255)" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                    </a>
-                </div>
-        
-                <footer class="no-print footer footer--landing">
-                    <div class="footer__row">Buger404 copied from peppy-osu</div>
-                    <div class="js-sync-height--target" data-sync-height-id="permanent-fixed-footer" style="min-height: 0px;"></div>
-                </footer>
-            </footer>
+			    to {
+			        -moz-transform: rotate(359deg)
+			    }
+			}
 
-        </div>
+			@-o-keyframes rotation {
+			    from {
+			        -o-transform: rotate(0deg)
+			    }
+
+			    to {
+			        -o-transform: rotate(359deg)
+			    }
+			}
+			@keyframes rotation {
+			    from {
+			        transform: rotate(0deg)
+			    }
+
+			    to {
+			        transform: rotate(359deg)
+			    }
+			}
+			.fade.in {
+			    filter: alpha(opacity=100);
+			}
+			.fade.in {
+			    opacity: 1;
+			}
+			.fade {
+			    opacity: 0;
+			    filter: alpha(opacity=0);
+			    -webkit-transition: opacity .3s linear;
+			    transition: opacity .3s linear;
+			}
+			.fade {
+			    opacity: 0;
+			    -webkit-transition: opacity .15s linear;
+			    -o-transition: opacity .15s linear;
+			    transition: opacity .15s linear;
+			}
+			    .fade.in .spinner, .fade.in .spinner-small {
+			    -webkit-animation: rotation .6s infinite linear;
+			    -moz-animation: rotation .6s infinite linear;
+			    -o-animation: rotation .6s infinite linear;
+			    animation: rotation .6s infinite linear;
+			}
+			.spinner{
+			    height: 60px;
+			    width: 60px;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin: -20px -20px 0 0;
+			    border: 10px solid #fff;
+			    border-top: 10px solid rgba(47,161,214,1);
+			    border-radius: 100%;
+			}
+			#page-loader.fade.in {
+			    display: block;
+			}
+			#page-loader.fade {
+			    display: none;
+			}
+			#page-loader {
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    bottom: 0;
+			    right: 0;
+			    width:100%;
+			    height:100%;
+			    background: rgb(32,32,32);
+			    z-index: 999999;
+			}
+		</style>
+		<script type="text/javascript">  
+			window.onload = function loadcomplete(){
+				document.getElementById('page-loader').className='fade';
+				console.log("❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤");
+				console.log("WELCOME TO BUGER404のHOME :)");
+				console.log("Glad to meet you here:");
+				console.log("	QQ   ： 1361778219");
+				console.log("	Email： ris_vb@126.com");
+				console.log("❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤");
+				demo.speed=0.4;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+		<div class="headdiv">
+			<canvas id="canvas" style="width: 100%;height: 760px;">Canvas is not supported in your browser</canvas>
+		</div>
+		<div class="headdiv_cover">
+			<p class="headtitle">404の狗窝</p>
+			<p class="headcontent">创造不一样的BUG艺术</p>
+		</div>
+		<img src="image/github.png" style="left: 10px;top: 10px;" onclick="window.open('https://github.com/buger404')"></img>
+		<img src="image/qq.png" style="width: 55px;height: 60px;left: 100px;top: 20px;" onclick="window.open('http://wpa.qq.com/msgrd?v=3&uin=1361778219&site=qq&menu=yes" class="landing-nav__link')"></img>
+		<div class="prodiv" style="background-image: url('image\\mori2.jpeg');">
+			<div class="innerdiv">
+				<p class="protitle">Moristory2</p>
+				<p class="procontent">一场穿越时空的旅行</p>
+				<a class="btn" href="https://github.com/buger404/moristory2" target="_blank">Github</a>
+			</div>
+		</div>
+		<div class="prodiv" style="background-image: url('image\\experiments.jpeg');">
+			<div class="innerdiv">
+				<p class="protitle">Experiments</p>
+				<p class="procontent">我的各种实验项目</p>
+				<a class="btn" href="https://github.com/buger404/experiments" target="_blank">Github</a>
+			</div>
+		</div>
+		<div class="prodiv" style="background-image: url('image\\emerald.jpeg');">
+			<div class="innerdiv">
+				<p class="protitle">Emerald</p>
+				<p class="procontent">轻量级UI/游戏框架</p>
+				<a class="btn" href="https://github.com/buger404/emerald" target="_blank">参与比赛中</a>
+			</div>
+		</div>
+		<div class="prodiv" style="background-image: url('image\\intallk.jpeg');">
+			<div class="innerdiv">
+				<p class="protitle">Intallk</p>
+				<p class="procontent">智能扰民机器人黑嘴</p>
+				<a class="btn" href="https://github.com/buger404/intallk" target="_blank">Github</a>
+			</div>
+		</div>
+		<div class="prodiv" style="background-image: url('image\\friend.jpeg');height: 500px;">
+			<div class="innerdiv">
+				<p class="protitle">伙伴们</p>
+				<a class="procontent" href="https://trisolaris233.github.io/" target="_blank">阳光加冰</a>
+				<br>
+				<a class="procontent" href="https://imag-er.github.io/" target="_blank">Imag-er</a>
+				<br>
+				<a class="procontent" href="http://yorkin.cool/" target="_blank">方程</a>
+				<br>
+				<a class="procontent" href="http://www.dimojang.com/" target="_blank">迪莫</a>
+				<br>
+				<a class="procontent" href="https://server.nutr1t07.codes/" target="_blank">λ5af40g</a>
+				<br>
+				<a class="procontent" href="https://xxs2.cn/" target="_blank">小学生</a>
+				<br>
+				<a class="procontent" href="https://lhr.wiki/" target="_blank">小林</a>
+				<br>
+				<a class="procontent" href="http://sewailer.gitee.io/" target="_blank">Eric</a>
+			</div>
+		</div>
+		<div class="prodiv" style="background-image: url('image\\404.jpg');height: 130px;">
+			<div class="innerdiv">
+				<p class="procontent">Made LOVE❤ by Buger404 (2020)</p>
+			</div>
+		</div>
+		<script src='js/dat.gui.min.js'></script> 
+		<script src="js/index.js"></script>
+	</body>
 </html>
