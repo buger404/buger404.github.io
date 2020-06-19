@@ -1,0 +1,162 @@
+<html lang="zh-cn" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Buger404の水日常</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<!--抄来的markdown解析js-->
+	    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	    <!--偷来的github样式-->
+	    <link rel="stylesheet" href="github.css">
+	    <script>
+	  	function showMarkdown(file)
+		{
+		    var x;
+		    //如果支持XMLHTTP
+		    if (window.XMLHttpRequest) x = new XMLHttpRequest();
+	 
+		    x.onreadystatechange=function()
+		    {
+		        if (x.readyState == 4 && x.status == 200)
+		        {
+		        	//将解析结果放置到'markdown'中
+		            document.getElementById("markdown").innerHTML = marked(x.responseText);
+		        }
+		    }
+		    //发送请求
+		    x.open("GET",file,true);
+		    x.send();
+		}
+		showMarkdown("md\\welcome.md");
+	    </script>
+		<style type="text/css"> 
+			@-webkit-keyframes rotation {
+			    from {
+			        -webkit-transform: rotate(0deg)
+			    }
+
+			    to {
+			        -webkit-transform: rotate(359deg)
+			    }
+			}
+
+			@-moz-keyframes rotation {
+			    from {
+			        -moz-transform: rotate(0deg)
+			    }
+
+			    to {
+			        -moz-transform: rotate(359deg)
+			    }
+			}
+
+			@-o-keyframes rotation {
+			    from {
+			        -o-transform: rotate(0deg)
+			    }
+
+			    to {
+			        -o-transform: rotate(359deg)
+			    }
+			}
+			@keyframes rotation {
+			    from {
+			        transform: rotate(0deg)
+			    }
+
+			    to {
+			        transform: rotate(359deg)
+			    }
+			}
+			.fade.in {
+			    filter: alpha(opacity=100);
+			}
+			.fade.in {
+			    opacity: 1;
+			}
+			.fade {
+			    opacity: 0;
+			    filter: alpha(opacity=0);
+			    -webkit-transition: opacity .3s linear;
+			    transition: opacity .3s linear;
+			}
+			.fade {
+			    opacity: 0;
+			    -webkit-transition: opacity .15s linear;
+			    -o-transition: opacity .15s linear;
+			    transition: opacity .15s linear;
+			}
+			    .fade.in .spinner, .fade.in .spinner-small {
+			    -webkit-animation: rotation .6s infinite linear;
+			    -moz-animation: rotation .6s infinite linear;
+			    -o-animation: rotation .6s infinite linear;
+			    animation: rotation .6s infinite linear;
+			}
+			.spinner{
+			    height: 60px;
+			    width: 60px;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin: -20px -20px 0 0;
+			    border: 10px solid #fff;
+			    border-top: 10px solid rgba(47,161,214,1);
+			    border-radius: 100%;
+			}
+			#page-loader.fade.in {
+			    display: block;
+			}
+			#page-loader.fade {
+			    display: none;
+			}
+			#page-loader {
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    bottom: 0;
+			    right: 0;
+			    width:100%;
+			    height:100%;
+			    background: rgb(32,32,32);
+			    z-index: 999999;
+			}
+		</style>
+		<script type="text/javascript">  
+			window.onload = function loadcomplete(){
+				document.getElementById('page-loader').className='fade';
+				console.log("❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤");
+				console.log("WELCOME TO BUGER404のHOME :)");
+				console.log("Glad to meet you here:");
+				console.log("	QQ   ： 1361778219");
+				console.log("	Email： ris_vb@126.com");
+				console.log("❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤");
+				demo.speed=0.4;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+		<div class="bg">
+			<canvas id="canvas" style="width: 100%;height: 100%;">Canvas is not supported in your browser</canvas>
+		</div>
+		<div style="width:20%;height:100%;overflow: scroll;">
+			<div class="mddiv">
+				<p class="mdtitle" onclick="javascript(showMarkdown('md\\first.md'));">第一篇博客</p>
+			</div>
+		</div>
+		<div class="markcontainer">
+			<div id="markdown" class="markdown-body">
+	    		<!--这个部分如果读取成功就会被丢弃-->
+	    		<strong style="font-size: 24px;">☹ 您的浏览器不支持该文档的显示...</strong>
+    		</div>
+		</div>
+
+		<div class="prodiv" style="background-image: url('image\\404.jpg');height: 130px;">
+			<div class="innerdiv">
+				<p class="procontent">Made by Buger404 (2020)</p>
+			</div>
+		</div>
+		<script src='js/dat.gui.min.js'></script> 
+		<script src="js/index.js"></script>
+	</body>
+</html>
