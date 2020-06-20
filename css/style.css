@@ -197,14 +197,14 @@ canvas{
 	border-radius: 0px;
 	transition: 0.5s;
 }
-img{
+.bimg{
 	width:80px;
 	height: 80px;
 	position: absolute;
 	transform: rotateZ(0deg);
 	transition: 1s;
 }
-img:hover{
+.bimg:hover{
 	transform: rotateZ(360deg);
 	transition: 1s;
 }
