@@ -80,7 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 var LS_ACCESS_TOKEN_KEY = exports.LS_ACCESS_TOKEN_KEY = 'gitment-comments-token';
 var LS_USER_KEY = exports.LS_USER_KEY = 'gitment-user-info';
 
-var NOT_INITIALIZED_ERROR = exports.NOT_INITIALIZED_ERROR = new Error('Comments Not Initialized');
+var NOT_INITIALIZED_ERROR = exports.NOT_INITIALIZED_ERROR = new Error('璇ユ枃绔犺瘎璁烘湭鍒濆鍖�');
 
 /***/ }),
 /* 1 */
@@ -2852,7 +2852,7 @@ function renderHeader(_ref, instance) {
     return reaction.content === 'heart' && reaction.user.login === user.login;
   });
   likeButton.className = 'gitment-header-like-btn';
-  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? 'Unlike' : 'Like') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> Liked' : '') + '\n  ';
+  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '鍙栨秷鍠滄' : '鍠滄') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> 浜哄枩娆�' : '') + '\n  ';
 
   if (likedReaction) {
     likeButton.classList.add('liked');
@@ -2868,7 +2868,7 @@ function renderHeader(_ref, instance) {
   container.appendChild(likeButton);
 
   var commentsCount = document.createElement('span');
-  commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> Comments' : '') + '\n  ';
+  commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> 鏉¤瘎璁�' : '') + '\n  ';
   container.appendChild(commentsCount);
 
   var issueLink = document.createElement('a');
@@ -2908,7 +2908,7 @@ function renderComments(_ref2, instance) {
           alert(e);
         });
       };
-      initButton.innerText = 'Initialize Comments';
+      initButton.innerText = '鍒濆鍖栬瘎璁�';
       initHint.appendChild(initButton);
       errorBlock.appendChild(initHint);
     } else {
@@ -2918,14 +2918,14 @@ function renderComments(_ref2, instance) {
     return container;
   } else if (comments === undefined) {
     var loading = document.createElement('div');
-    loading.innerText = 'Loading comments...';
+    loading.innerText = '璇勮鍔犺浇涓�...';
     loading.className = 'gitment-comments-loading';
     container.appendChild(loading);
     return container;
   } else if (!comments.length) {
     var emptyBlock = document.createElement('div');
     emptyBlock.className = 'gitment-comments-empty';
-    emptyBlock.innerText = 'No Comment Yet';
+    emptyBlock.innerText = '鏆傛棤璇勮锛屾潵杩囧氨鐣欑偣鐥曡抗鍚�';
     container.appendChild(emptyBlock);
     return container;
   }
@@ -2938,7 +2938,7 @@ function renderComments(_ref2, instance) {
     var updateDate = new Date(comment.updated_at);
     var commentItem = document.createElement('li');
     commentItem.className = 'gitment-comment';
-    commentItem.innerHTML = '\n      <a class="gitment-comment-avatar" href="' + comment.user.html_url + '" target="_blank">\n        <img class="gitment-comment-avatar-img" src="' + comment.user.avatar_url + '"/>\n      </a>\n      <div class="gitment-comment-main">\n        <div class="gitment-comment-header">\n          <a class="gitment-comment-name" href="' + comment.user.html_url + '" target="_blank">\n            ' + comment.user.login + '\n          </a>\n          commented on\n          <span title="' + createDate + '">' + createDate.toDateString() + '</span>\n          ' + (createDate.toString() !== updateDate.toString() ? ' \u2022 <span title="comment was edited at ' + updateDate + '">edited</span>' : '') + '\n          <div class="gitment-comment-like-btn">' + _icons.heart + ' ' + (comment.reactions.heart || '') + '</div>\n        </div>\n        <div class="gitment-comment-body gitment-markdown">' + comment.body_html + '</div>\n      </div>\n    ';
+    commentItem.innerHTML = '\n      <a class="gitment-comment-avatar" href="' + comment.user.html_url + '" target="_blank">\n        <img class="gitment-comment-avatar-img" src="' + comment.user.avatar_url + '"/>\n      </a>\n      <div class="gitment-comment-main">\n        <div class="gitment-comment-header">\n          <a class="gitment-comment-name" href="' + comment.user.html_url + '" target="_blank">\n            ' + comment.user.login + '\n          </a>\n          璇勮浜嶾n          <span title="' + createDate + '">' + createDate.toDateString() + '</span>\n          ' + (createDate.toString() !== updateDate.toString() ? ' \u2022 <span title="comment was edited at ' + updateDate + '">宸茬紪杈�</span>' : '') + '\n          <div class="gitment-comment-like-btn">' + _icons.heart + ' ' + (comment.reactions.heart || '') + '</div>\n        </div>\n        <div class="gitment-comment-body gitment-markdown">' + comment.body_html + '</div>\n      </div>\n    ';
     var likeButton = commentItem.querySelector('.gitment-comment-like-btn');
     var likedReaction = commentReactions[comment.id] && commentReactions[comment.id].find(function (reaction) {
       return reaction.content === 'heart' && reaction.user.login === user.login;
@@ -2965,7 +2965,7 @@ function renderComments(_ref2, instance) {
       if (markdownBody.clientHeight > instance.maxCommentHeight) {
         markdownBody.classList.add('gitment-comment-body-folded');
         markdownBody.style.maxHeight = instance.maxCommentHeight + 'px';
-        markdownBody.title = 'Click to Expand';
+        markdownBody.title = '鐐瑰嚮灞曞紑';
         markdownBody.onclick = function () {
           markdownBody.classList.remove('gitment-comment-body-folded');
           markdownBody.style.maxHeight = '';
@@ -3038,8 +3038,8 @@ function renderEditor(_ref3, instance) {
   container.className = 'gitment-container gitment-editor-container';
 
   var shouldDisable = user.login && !error ? '' : 'disabled';
-  var disabledTip = user.login ? '' : 'Login to Comment';
-  container.innerHTML = '\n      ' + (user.login ? '<a class="gitment-editor-avatar" href="' + user.html_url + '" target="_blank">\n            <img class="gitment-editor-avatar-img" src="' + user.avatar_url + '"/>\n          </a>' : user.isLoggingIn ? '<div class="gitment-editor-avatar">' + _icons.spinner + '</div>' : '<a class="gitment-editor-avatar" href="' + instance.loginLink + '" title="login with GitHub">\n              ' + _icons.github + '\n            </a>') + '\n    </a>\n    <div class="gitment-editor-main">\n      <div class="gitment-editor-header">\n        <nav class="gitment-editor-tabs">\n          <button class="gitment-editor-tab gitment-selected">Write</button>\n          <button class="gitment-editor-tab">Preview</button>\n        </nav>\n        <div class="gitment-editor-login">\n          ' + (user.login ? '<a class="gitment-editor-logout-link">Logout</a>' : user.isLoggingIn ? 'Logging in...' : '<a class="gitment-editor-login-link" href="' + instance.loginLink + '">Login</a> with GitHub') + '\n        </div>\n      </div>\n      <div class="gitment-editor-body">\n        <div class="gitment-editor-write-field">\n          <textarea placeholder="Leave a comment" title="' + disabledTip + '" ' + shouldDisable + '></textarea>\n        </div>\n        <div class="gitment-editor-preview-field gitment-hidden">\n          <div class="gitment-editor-preview gitment-markdown"></div>\n        </div>\n      </div>\n    </div>\n    <div class="gitment-editor-footer">\n      <a class="gitment-editor-footer-tip" href="https://guides.github.com/features/mastering-markdown/" target="_blank">\n        Styling with Markdown is supported\n      </a>\n      <button class="gitment-editor-submit" title="' + disabledTip + '" ' + shouldDisable + '>Comment</button>\n    </div>\n  ';
+  var disabledTip = user.login ? '' : '鐧诲綍鍗冲彲璇勮';
+  container.innerHTML = '\n      ' + (user.login ? '<a class="gitment-editor-avatar" href="' + user.html_url + '" target="_blank">\n            <img class="gitment-editor-avatar-img" src="' + user.avatar_url + '"/>\n          </a>' : user.isLoggingIn ? '<div class="gitment-editor-avatar">' + _icons.spinner + '</div>' : '<a class="gitment-editor-avatar" href="' + instance.loginLink + '" title="login with GitHub">\n              ' + _icons.github + '\n            </a>') + '\n    </a>\n    <div class="gitment-editor-main">\n      <div class="gitment-editor-header">\n        <nav class="gitment-editor-tabs">\n          <button class="gitment-editor-tab gitment-selected">缂栬緫</button>\n          <button class="gitment-editor-tab">棰勮</button>\n        </nav>\n        <div class="gitment-editor-login">\n          ' + (user.login ? '<a class="gitment-editor-logout-link">娉ㄩ攢</a>' : user.isLoggingIn ? '姝ｅ湪鐧诲綍...' : '<a class="gitment-editor-login-link" href="' + instance.loginLink + '">鐧诲綍</a> Github') + '\n        </div>\n      </div>\n      <div class="gitment-editor-body">\n        <div class="gitment-editor-write-field">\n          <textarea placeholder="璇勮鏄崥涓绘渶澶х殑鍔ㄥ姏锛屾潵杩囧氨鐣欑偣鐥曡抗鍚�" title="' + disabledTip + '" ' + shouldDisable + '></textarea>\n        </div>\n        <div class="gitment-editor-preview-field gitment-hidden">\n          <div class="gitment-editor-preview gitment-markdown"></div>\n        </div>\n      </div>\n    </div>\n    <div class="gitment-editor-footer">\n      <a class="gitment-editor-footer-tip" href="https://guides.github.com/features/mastering-markdown/" target="_blank">\n        璇勮妗嗘敮鎸� Markdown 璇硶\n      </a>\n      <button class="gitment-editor-submit" title="' + disabledTip + '" ' + shouldDisable + '>鍙戣〃璇勮</button>\n    </div>\n  ';
   if (user.login) {
     container.querySelector('.gitment-editor-logout-link').onclick = function () {
       return instance.logout();
@@ -3083,11 +3083,11 @@ function renderEditor(_ref3, instance) {
     var preview = previewField.querySelector('.gitment-editor-preview');
     var content = textarea.value.trim();
     if (!content) {
-      preview.innerText = 'Nothing to preview';
+      preview.innerText = '鏃犲彲棰勮鍐呭';
       return;
     }
 
-    preview.innerText = 'Loading preview...';
+    preview.innerText = '鍔犺浇棰勮涓�...';
     instance.markdown(content).then(function (html) {
       return preview.innerHTML = html;
     });
@@ -3095,17 +3095,17 @@ function renderEditor(_ref3, instance) {
 
   var submitButton = container.querySelector('.gitment-editor-submit');
   submitButton.onclick = function () {
-    submitButton.innerText = 'Submitting...';
+    submitButton.innerText = '璇勮姝ｅ湪涓婁紶...';
     submitButton.setAttribute('disabled', true);
     instance.post(textarea.value.trim()).then(function (data) {
       textarea.value = '';
       textarea.style.height = 'auto';
       submitButton.removeAttribute('disabled');
-      submitButton.innerText = 'Comment';
+      submitButton.innerText = '鍙戣〃璇勮';
     }).catch(function (e) {
       alert(e);
       submitButton.removeAttribute('disabled');
-      submitButton.innerText = 'Comment';
+      submitButton.innerText = '鍙戣〃璇勮';
     });
   };
 
@@ -3116,7 +3116,7 @@ function renderFooter() {
   var container = document.createElement('div');
   container.lang = "en-US";
   container.className = 'gitment-container gitment-footer-container';
-  container.innerHTML = '\n    Powered by\n    <a class="gitment-footer-project-link" href="https://github.com/imsun/gitment" target="_blank">\n      Gitment\n    </a>\n  ';
+  container.innerHTML = '\n    鐢盶n    <a class="gitment-footer-project-link" href="https://github.com/imsun/gitment" target="_blank">\n      Gitment\n    </a> 寮哄姏椹卞姩\n 路 <a href="https://billts.site">鐮佸啘BTS</a> 姹夊寲 ';
   return container;
 }
 
@@ -3368,7 +3368,7 @@ var Gitment = function () {
       theme: _default2.default,
       oauth: {},
       perPage: 20,
-      maxCommentHeight: 250
+      maxCommentHeight: 400
     }, options);
 
     this.useTheme(this.theme);
@@ -3413,7 +3413,10 @@ var Gitment = function () {
       }, options);
 
       this.state.user.isLoggingIn = true;
-      _utils.http.post('https://gh-oauth.imsun.net', {
+      //_utils.http.post('https://gh-oauth.imsun.net', {
+      _utils.http.post('https://auth.baixiaotu.cc', {
+      //_utils.http.post('https://bak.smalbox.club', {
+      //_utils.http.post('https://cors.wenjunjiang.win', {
         code: code,
         client_id: client_id,
         client_secret: client_secret
@@ -3642,7 +3645,7 @@ var Gitment = function () {
       var _this12 = this;
 
       if (!this.accessToken) {
-        alert('Login to Like');
+        alert('鐧诲綍鍗冲彲鍠滄');
         return Promise.reject();
       }
 
@@ -3682,7 +3685,7 @@ var Gitment = function () {
       var _this14 = this;
 
       if (!this.accessToken) {
-        alert('Login to Like');
+        alert('鐧诲綍鍗冲彲鍠滄');
         return Promise.reject();
       }
 
