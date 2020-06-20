@@ -11,6 +11,7 @@
 	    <script>
 	  	function showMarkdown(file)
 		{
+			document.getElementById('page-loader').className='fade in';
 		    var x;
 		    //如果支持XMLHTTP
 		    if (window.XMLHttpRequest) x = new XMLHttpRequest();
@@ -21,6 +22,7 @@
 		        {
 		        	//将解析结果放置到'markdown'中
 		            document.getElementById("markdown").innerHTML = marked(x.responseText);
+		            document.getElementById('page-loader').className='fade';
 		        }
 		    }
 		    //发送请求
