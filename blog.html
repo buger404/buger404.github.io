@@ -139,13 +139,13 @@
 		</div>
 		<div id="menu" style="animation-fill-mode: forwards;width:100%;height:50%;overflow: scroll;background-color: rgba(0,0,0,.5);">
 			<div class="mddiv">
-				<p class="mdtitle" onclick="javascript:showMarkdown('md\\how-to-study.md')">分享学习经验</p>
+				<p class="mdtitle" onclick="location='blog.html?article=how-to-study'">分享学习经验</p>
 			</div>
 			<div class="mddiv">
-				<p class="mdtitle" onclick="javascript:showMarkdown('md\\talking-about-new-home.md')">我搬到校外居住啦！</p>
+				<p class="mdtitle" onclick="location='blog.html?article=talking-about-new-home'">我搬到校外居住啦！</p>
 			</div>
 			<div class="mddiv">
-				<p class="mdtitle" onclick="javascript:showMarkdown('md\\first.md')">第一篇博客</p>
+				<p class="mdtitle" onclick="location='blog.html?article=first'">第一篇博客</p>
 			</div>
 		</div>
 		<div style="width: 100%;height: 80px;background-color: rgb(255,255,255);padding-left: 40px;">
@@ -171,6 +171,16 @@
 	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 	<script>
+		function getQueryVariable(variable)
+		{
+		       var query = window.location.search.substring(1);
+		       var vars = query.split("&");
+		       for (var i=0;i<vars.length;i++) {
+		               var pair = vars[i].split("=");
+		               if(pair[0] == variable){return pair[1];}
+		       }
+		       return(false);
+		}
 		function renderGitment(cid){
 			var gitalk = new Gitalk({
 				clientID: '112c7dc2a70eecc886f0',
@@ -220,7 +230,8 @@
 		    x.open("GET",file,true);
 		    x.send();
 		}
-		showMarkdown("md\\welcome.md");
+		var article = getQueryVariable("article");
+		showMarkdown("md\\" + (article ? article : "welcome") + ".md");
 		showMenu();
     </script>
 </html>
