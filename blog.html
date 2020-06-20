@@ -112,29 +112,6 @@
 				demo.speed=0.4;
 			}
 		</script>
-	    <script>
-	  	function showMarkdown(file)
-		{
-			document.getElementById('page-loader').className='fade in';
-		    var x;
-		    //如果支持XMLHTTP
-		    if (window.XMLHttpRequest) x = new XMLHttpRequest();
-	 
-		    x.onreadystatechange=function()
-		    {
-		        if (x.readyState == 4 && x.status == 200)
-		        {
-		        	//将解析结果放置到'markdown'中
-		            document.getElementById("markdown").innerHTML = marked(x.responseText);
-		            document.getElementById('page-loader').className='fade';
-		        }
-		    }
-		    //发送请求
-		    x.open("GET",file,true);
-		    x.send();
-		}
-		showMarkdown("md\\welcome.md");
-	    </script>
 	</head>
 	<body>
 		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
@@ -167,4 +144,27 @@
 		<script src='js/dat.gui.min.js'></script> 
 		<script src="js/index.js"></script>
 	</body>
+    <script>
+  	function showMarkdown(file)
+	{
+		document.getElementById('page-loader').className='fade in';
+	    var x;
+	    //如果支持XMLHTTP
+	    if (window.XMLHttpRequest) x = new XMLHttpRequest();
+ 
+	    x.onreadystatechange=function()
+	    {
+	        if (x.readyState == 4 && x.status == 200)
+	        {
+	        	//将解析结果放置到'markdown'中
+	            document.getElementById("markdown").innerHTML = marked(x.responseText);
+	            document.getElementById('page-loader').className='fade';
+	        }
+	    }
+	    //发送请求
+	    x.open("GET",file,true);
+	    x.send();
+	}
+	showMarkdown("md\\welcome.md");
+    </script>
 </html>
