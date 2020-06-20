@@ -142,7 +142,7 @@ canvas{
 	transition: 0.5s;
 }
 .mddiv:hover {
-	background-color: rgba(0,0,0,.9);
+	background-color: rgba(0,0,0,1);
 	background-size: 100% auto;
 	padding-left: 40px;
 	transition: 0.5s;
@@ -150,7 +150,7 @@ canvas{
 .mdtitle{
 	font-size: 18px;
 	font-weight: 400;
-	color: rgba(255,255,255,.7);
+	color: rgba(255,255,255,.8);
 	text-decoration: none;
     animation-duration: 3s;
     animation-fill-mode: both;
