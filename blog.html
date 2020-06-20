@@ -8,7 +8,6 @@
 	    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	    <!--偷来的github样式-->
 	    <link rel="stylesheet" href="github.css">
-	    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
 		<style type="text/css"> 
 			@-webkit-keyframes rotation {
 			    from {
@@ -159,7 +158,7 @@
     		</div>
 		</div>
 		<div style="width: 100%;padding: 10%;">
-			<div id="gitment" style="width: 80%;"></div>
+			<div id="gittalk" style="width: 80%;"></div>
 		</div>
 		<div class="prodiv" style="background-image: url('image\\404.jpg');height: 130px;">
 			<div class="innerdiv">
@@ -169,21 +168,20 @@
 		<script src='js/dat.gui.min.js'></script> 
 		<script src="js/index.js"></script>
 	</body>
-	<script src="https://billts.site/js/gitment.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 	<script>
 		function renderGitment(cid){
-			var clientId = '112c7dc2a70eecc886f0';
-			var clientSecret = '77e2194bccb69c74161c541d2484d677b1ac3d2e';
-			var gitment = new Gitment({
-			  id: cid.split('\\')[1].split('.')[0],
-			  owner: 'Buger404',
-			  repo: 'buger404.github.io',
-			  oauth: {
-			    client_id: clientId,
-			    client_secret: clientSecret,
-			  },
+			var gitalk = new Gitalk({
+				clientID: '112c7dc2a70eecc886f0',
+				clientSecret: '77e2194bccb69c74161c541d2484d677b1ac3d2e',
+				repo: 'buger404.github.io',
+				owner: 'Buger404',
+				admin: ['Buger404'],
+				id: cid.split('\\')[1].split('.')[0],
+				distractionFreeMode: true
 			});
-			gitment.render('gitment');
+			gitalk.render('gittalk');
 		}
 	</script>
     <script>
