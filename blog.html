@@ -157,7 +157,7 @@
 	    		<strong style="font-size: 24px;">☹ 您的浏览器不支持该文档的显示...</strong>
     		</div>
 		</div>
-
+		<div id="gitment"></div>
 		<div class="prodiv" style="background-image: url('image\\404.jpg');height: 130px;">
 			<div class="innerdiv">
 				<p class="procontent">Made by Buger404 (2020)</p>
@@ -166,6 +166,23 @@
 		<script src='js/dat.gui.min.js'></script> 
 		<script src="js/index.js"></script>
 	</body>
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		function renderGitment(cid){
+			var clientId = '112c7dc2a70eecc886f0';
+			var clientSecret = '77e2194bccb69c74161c541d2484d677b1ac3d2e';
+			var gitment = new Gitment({
+			  id: cid,
+			  owner: 'Buger404',
+			  repo: 'buger404.github.io',
+			  oauth: {
+			    client_id: clientId,
+			    client_secret: clientSecret,
+			  },
+			});
+			gitment.render('gitment');
+		}
+	</script>
     <script>
     	var menued = false;
     	function showMenu()
@@ -193,6 +210,7 @@
 		        {
 		        	//将解析结果放置到'markdown'中
 		            document.getElementById("markdown").innerHTML = marked(x.responseText);
+		            renderGitment(file);
 		            document.getElementById('page-loader').className='fade';
 		        }
 		    }
