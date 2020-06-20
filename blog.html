@@ -134,7 +134,7 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body style="overflow-x: hidden;">
 		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
 		<div id="rain" class="bg" style="animation-fill-mode: forwards;overflow:hidden;">
 		</div>
@@ -150,7 +150,7 @@
 			</div>
 		</div>
 		<div style="width: 100%;height: 80px;background-color: rgb(255,255,255);padding-left: 40px;">
-			<p class="mdtitle" onclick="javascript:showMenu()" style="font-size:48px;color: rgb(0,0,0);">≡ Buger404 の 水日常</p>
+			<p class="mdtitle" onclick="javascript:showMenu()" style="font-size:48px;color: rgb(0,0,0);margin-right: 0px;">≡ Buger404 の 水日常</p>
 		</div>
 		<div class="markcontainer">
 			<div id="markdown" class="markdown-body">
@@ -175,7 +175,7 @@
 			var clientId = '112c7dc2a70eecc886f0';
 			var clientSecret = '77e2194bccb69c74161c541d2484d677b1ac3d2e';
 			var gitment = new Gitment({
-			  id: cid,
+			  id: cid.split('\\')[1].split('.')[0],
 			  owner: 'Buger404',
 			  repo: 'buger404.github.io',
 			  oauth: {
