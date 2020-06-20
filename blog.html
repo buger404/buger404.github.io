@@ -211,6 +211,7 @@
 		        {
 		        	//将解析结果放置到'markdown'中
 		            document.getElementById("markdown").innerHTML = marked(x.responseText);
+		            document.title = 'Buger404の水日常 - ' + file.split('\\')[1].split('.')[0];
 		            renderGitment(file);
 		            document.getElementById('page-loader').className='fade';
 		        }
