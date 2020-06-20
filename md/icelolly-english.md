@@ -106,17 +106,17 @@ The mist covered the whole world, the terrible weather blocked out the sun. In t
 
 修改：
 
-![notes](notes\\notes.png)
+![notes](notes.png)
 
-![QQ图片20200415125333](notes\\QQ图片20200415125333.png)
+![QQ图片20200415125333](QQ图片20200415125333.png)
 
-![QQ图片20200415125336](notes\\QQ图片20200415125336.png)
+![QQ图片20200415125336](QQ图片20200415125336.png)
 
 ## 今日挑战
 
 * 雅思作文（不限时）
 
-  ![notes](notes\\comp.png)
+  ![notes](comp.png)
 
 # 4.15 新冰棍秘密笔记
 
@@ -208,10 +208,10 @@ The mist covered the whole world, the terrible weather blocked out the sun. In t
 
 * 修改：
 
-![QQ图片20200416163729](notes\\QQ图片20200416163729.png)
-![QQ图片20200416163721](notes\\QQ图片20200416163721.png)
-![QQ图片20200416163643](notes\\QQ图片20200416163643.png)
-![QQ图片20200416163657](notes\\QQ图片20200416163657.png)
+![QQ图片20200416163729](QQ图片20200416163729.png)
+![QQ图片20200416163721](QQ图片20200416163721.png)
+![QQ图片20200416163643](QQ图片20200416163643.png)
+![QQ图片20200416163657](QQ图片20200416163657.png)
 
 * 评价：
 
