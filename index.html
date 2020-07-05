@@ -44,6 +44,26 @@
 			        transform: rotate(359deg)
 			    }
 			}
+			@keyframes treeout {
+			    from {
+			    	height: 50%;
+			        transform: 0.5s;
+			    }
+			    to {
+			    	height: 0;
+			        transform: 0.5s;
+			    }
+			}
+			@keyframes treein {
+			    from {
+			    	height: 0;
+			        transform: 0.5s;
+			    }
+			    to {
+			    	height: 50%;
+			        transform: 0.5s;
+			    }
+			}
 			.fade.in {
 			    filter: alpha(opacity=100);
 			}
@@ -62,22 +82,22 @@
 			    -o-transition: opacity .15s linear;
 			    transition: opacity .15s linear;
 			}
-			    .fade.in .spinner, .fade.in .spinner-small {
-			    -webkit-animation: rotation .6s infinite linear;
-			    -moz-animation: rotation .6s infinite linear;
-			    -o-animation: rotation .6s infinite linear;
-			    animation: rotation .6s infinite linear;
-			}
 			.spinner{
-			    height: 60px;
-			    width: 60px;
+			    height: 80px;
+			    width: 80px;
 			    position: absolute;
-			    top: 50%;
-			    left: 50%;
-			    margin: -20px -20px 0 0;
-			    border: 10px solid #fff;
-			    border-top: 10px solid rgba(47,161,214,1);
+			    top: 40%;
+			    text-align: center;
+			    box-shadow: 0 0 16px rgba(0,0,0,.4);
 			    border-radius: 100%;
+			}
+			.spinnertext{
+			    color: rgb(20,20,23);
+			    font-size: 24px;
+			    margin-left: -32px;
+			    position: absolute;
+			    text-align: center;
+			    top: 60%;
 			}
 			#page-loader.fade.in {
 			    display: block;
@@ -93,7 +113,7 @@
 			    right: 0;
 			    width:100%;
 			    height:100%;
-			    background: rgb(32,32,32);
+			    background: rgba(255,255,255,1);
 			    z-index: 999999;
 			}
 		</style>
@@ -111,7 +131,10 @@
 		</script>
 	</head>
 	<body>
-		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+		<div id="page-loader" class="fade in" style="text-align: center;">
+			<img class="spinner" src="image\bm.gif"></img>
+			<span class="spinnertext">网页正在赶来</span>
+		</div>
 		<div class="headdiv">
 			<canvas id="canvas" style="width: 100%;height: 760px;">Canvas is not supported in your browser</canvas>
 		</div>

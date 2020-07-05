@@ -1,5 +1,5 @@
 @echo off
 git add .
-git commit -m "404鍙堝啓浜嗕竴涓猙ug"
+git commit -m "404又写了一个bug"
 git push
 pause
