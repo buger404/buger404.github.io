@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
-		<div style="background-image: url('image\\rain.jpeg'); background-size: cover;text-align: center;position: relative;background-attachment: fixed;">
+		<div style="background-image: url('image\\rain.jpeg'); background-size: cover;text-align: center;position: relative;background-attachment: fixed;width: 100%;height: 100%;overflow: hidden;">
 			<!--My Friends-->
 			<image src="http://q2.qlogo.cn/headimg_dl?dst_uin=1361778219&spec=160" class="BM" 
 				   data-a="2" data-animate="FriendFly,20s," style="left: 50%; animation-delay: 1s;"
@@ -95,7 +95,7 @@
 			<br>
 			<span class="hellotip" data-a="2" data-animate="RunUp,0.5s,linear" style="color: rgba(255,255,255,.5); font-size: 20px;">*听说背景的头像藏着友联呢。</span>
 		</div>
-		<div style="height: 500px;text-align: center;">
+		<div style="width: 100%; height: 500px;text-align: center;overflow-y: scroll;">
 			<br>
 			<br>
 			<span class="divtitle" data-a="2" data-animate="FadeIn,0.5s,linear">联系方式</span>
@@ -156,7 +156,7 @@
 				Bilibili
 			</div>
 		</div>
-		<div style="background-image: url('image\\notebook.jpg'); background-size: cover;text-align: center;background-attachment: fixed;">
+		<div style="background-image: url('image\\notebook.jpg'); background-size: cover;text-align: center;background-attachment: fixed;width: 100%;height: 100%;">
 			<br>
 			<br>
 			<span id="blog_title" class="divtitle" data-a="2" data-animate="FadeIn,0.5s,linear" style="color: white;">这里是404的博客</span>
@@ -164,9 +164,9 @@
 			<br>
 			<br>
 			<div class="markcontainer">
-				<div id="markdown" style="width: 100%;height: 85%;overflow: scroll;">
+				<div id="markdown" style="width: 80%;height: 85%;overflow: scroll;text-align: left;margin-left: 10%;margin-right: 10%;font-size: 24px; color: white;">
 					<!--这个部分如果读取成功就会被丢弃-->
-					<span class="spinner"></span>
+					Loading...
 				</div>
 			</div>
 			<div class="blogtoolbar">
@@ -191,9 +191,9 @@
 			</div>
 		</div>
 		<div style="width: 100%;padding: 40px;overflow: scroll;height: 50%;animation-fill-mode: forwards;" id="remarks">
-			<div id="gittalk" style="width: 80%;"></div>
+			<div id="gittalk" style="width: 80%;margin-left: 10%;margin-right: 10%;overflow-y: scroll;"></div>
 		</div>
-		<div style="height: 550px;text-align: center;">
+		<div style="width: 100%;height: 550px;text-align: center;overflow-y: scroll;">
 			<br>
 			<br>
 			<span class="divtitle" data-a="2" data-animate="FadeIn,0.5s,linear">近期在填的坑</span>
@@ -228,7 +228,7 @@
 				（参与）
 			</div>
 		</div>
-		<div style="background-color: black; height: 100px;text-align: center;">
+		<div style="width:100%;background-color: black; height: 100px;text-align: center;">
 			<br>
 			<span class="divtitle" data-a="2" data-animate="FadeIn,0.5s,linear" style="color: white;">Made with ❤️ by Buger404 (2022)</span>
 		</div>
@@ -289,7 +289,7 @@
 		{
 		    var x;
 			document.getElementById("blog_title").innerText = file.split('\\')[1].split('.')[0];
-			document.getElementById("markdown").innerHTML = document.getElementById('page-loader').innerHTML;
+			document.getElementById("markdown").innerText = "Loading...";
 		    //如果支持XMLHTTP
 		    if (window.XMLHttpRequest) x = new XMLHttpRequest();
 	 
