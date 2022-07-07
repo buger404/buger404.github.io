@@ -1,222 +1,195 @@
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
+@font-face {
+	font-family: UIFont;
+	src: url(font.woff);
 }
-
-body {
-	margin:0;
-	padding:0;
-	width:100%;
+body{
+	font-family: UIFont;
+	padding: 0px;
+	margin: 0px;
 }
-canvas{
-	background-color: rgba(0,0,0,.3);
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-::-webkit-scrollbar {
-    width: 4px;    
-    /*height: 4px;*/
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background: rgba(0,0,0,0.2);
-}
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    border-radius: 0;
-    background: rgba(0,0,0,0.1);
-
-}
-.bg {
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -999;
-	width: 100%;
-	height: 50%;
-	background-image:url('..\\image\\rain.jpeg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-	float: left;
- }
-.markcontainer {
+div{
 	width: 100%;
 	height: 100%;
-	padding: 40px;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	background-color: rgba(255,255,255,.7);
-}
-.headdiv {
-	width: 100%;
-	height: 760px;
-	background-size: 100% auto;
-	background-image: url('..\\image\\rain.jpeg');
-	background-repeat: none;
-	background-size: cover;
-	background-position: center center;
-	text-align: center;
 	overflow: hidden;
 }
-.headdiv_cover {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 760px;
-	background-color: transparent;
+.hellotitle{
+	animation-delay: 0.5s;
 	text-align: center;
+	color: white;
+	position: relative;
+	top: 35%;
+	font-size: 36px;
+	opacity: 0;
+	animation-fill-mode: forwards;
 }
-.headtitle{
-	padding-top: 200px;
+.hellotip{
+	animation-delay: 0.7s;
 	text-align: center;
-	font-size: 48px;
-	font-weight: 900;
-	color: rgb(255,255,255);
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
-    animation-name: fadeInLeft;
+	position: relative;
+	top: 35%;
+	color: rgba(255,255,255,.7);
+	font-size: 28px;
+	opacity: 0;
+	animation-fill-mode: forwards;
 }
-.headcontent{
+.divtitle{
+	color: black;
 	text-align: center;
 	font-size: 36px;
-	font-weight: 400;
-	color: rgba(255,255,255,.7);
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-name: fadeInLeft;
+	opacity: 0;
+	animation-fill-mode: forwards;
 }
-.prodiv {
-	width: 100%;
-	height: 300px;
-	margin: 0;
-	background-size: 100% auto;
-	background-repeat: none;
-	background-size: cover;
-	background-position: center center;
-	overflow: hidden;
+.divcontent{
+	color: black;
+	text-align: center;
+	font-size:  28px;
+	opacity: 0;
+	animation-fill-mode: forwards;
 }
-.innerdiv2 {
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	padding-top: 20px;
-	padding-left: 70px;
-	background-color: rgba(0,0,0,.8);
-	background-size: 100% auto;
+.divbox{
+	color: rgb(96,96,96);
+	text-align: center;
+	font-size:  28px;
+	width: auto;
+	height: auto;
+	display: inline-block;
+	opacity: 0;
+	animation-fill-mode: forwards;
+	margin: 40px;
+	overflow: visible;
+}
+.robox{
+	border-radius: 16px;
+	box-shadow: 0px 10px 32px rgba(60,60,60,.2);
+	padding: 20px;
 	transition: 0.5s;
 }
-.innerdiv2:hover {
-	background-color: rgba(0,0,0,.9);
-	background-size: 100% auto;
-	padding-top: 20px;
-	padding-left: 50px;
+.robox:hover{
+	width: 120px;
+	height: 120px;
+	border-radius: 140px;
+	box-shadow: 0px 16px 64px rgba(20,184,255,.3);
 	transition: 0.5s;
 }
-.innerdiv {
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	padding-top: 20px;
-	padding-left: 70px;
-	background-color: rgba(0,0,0,.6);
-	background-size: 100% auto;
+.robtn{
+	background-color: white;
+	border-radius: 16px;
+	box-shadow: 0px 5px 16px rgba(60,60,60,.2);
+	padding: 15px;
 	transition: 0.5s;
 }
-.innerdiv:hover {
-	background-color: rgba(0,0,0,.9);
-	background-size: 100% auto;
-	padding-top: 20px;
-	padding-left: 50px;
+.robtn:hover{
+	border-radius: 60px;
+	box-shadow: 0px 8px 32px rgba(20,184,255,.3);
 	transition: 0.5s;
+}
+.blogtoolbar{
+	bottom: 315px;
+	position: relative;
+	width: auto;
+	height: auto;
+	padding: 20px;
 }
 .mddiv {
 	width: 100%;
-	height: 60px;
+	height: 90px;
 	left: 0;
 	top: 0;
 	padding-top: 2px;
 	padding-left: 25px;
-	background-color: rgba(0,0,0,.1);
+	background-color: rgba(0,0,0,0);
 	background-size: 100% auto;
 	transition: 0.5s;
 }
 .mddiv:hover {
-	background-color: rgba(0,0,0,1);
+	background-color: rgba(0,0,0,.1);
 	background-size: 100% auto;
 	padding-left: 40px;
 	transition: 0.5s;
 }
 .mdtitle{
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: 400;
-	color: rgba(255,255,255,.8);
+	color: rgba(0,0,0,.8);
 	text-decoration: none;
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-name: fadeInLeft;
 }
-.protitle{
-	font-size: 36px;
-	font-weight: 900;
-	color: rgb(255,255,255);
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
-    animation-name: fadeInLeft;
+@keyframes treeout {
+	from {
+		height: 50%;
+		padding: 40px;
+		transform: 0.5s;
+	}
+	to {
+		height: 0;
+		padding: 0px;
+		transform: 0.5s;
+	}
 }
-.procontent{
-	font-size: 24px;
-	font-weight: 400;
-	color: rgba(255,255,255,.7);
-	text-decoration: none;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-name: fadeInLeft;
+@keyframes treein {
+	from {
+		height: 0;
+		padding: 40px;
+		transform: 0.5s;
+	}
+	to {
+		height: 50%;
+		padding: 0px;
+		transform: 0.5s;
+	}
 }
-.btn{
-	margin-left: 80%;
-	background-color: rgba(255,255,255,.6);
-	box-shadow: rgba(255,255,255,0) 0px 4px 16px;
-	color: rgba(0,0,0,.9);
-	font-size: 24px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	padding-left: 25px;
-	padding-right: 25px;
-	border-radius: 100px;
-	text-align: center;
-	text-decoration: none;
+@keyframes RunIn{
+	from{transform: translateX(-10%);opacity: 0;}
+	to{transform: translateX(0%);opacity: 1;}
+  }
+@keyframes RunIn2{
+	from{transform: translateX(10%);opacity: 0;}
+	to{transform: translateX(0%);opacity: 1;}
+}
+@keyframes RunUp{
+	from{opacity: 0; margin-top: 100px;}
+	to{opacity: 1; margin-top: 0;}
+}
+@keyframes FadeInPic{
+	from{box-shadow: 16px 16px 0px rgba(60,60,60,0);}
+	to{box-shadow: 16px 16px 64px rgba(60,60,60,.5);}
+}
+@keyframes FadeIn{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@keyframes Quick{
+	from{opacity: 0.3;top: 69%;}
+	to{opacity: 0.8;top: 72%;}
+}
+@keyframes BMFly{
+	from{top:1600px;}
+	to{top:-1600px;}
+}
+@keyframes FriendFly{
+	from{top: 100%;}
+	to{top: -10%;}
+}
+@keyframes FallDown{
+	to{
+	  box-shadow: 0px 0px 64px rgba(0,0,0,.5);
+	  transform: translateX(45%) translateY(23%) matrix(0.519,0.3,-0.48,0.519,0,0);
+	  opacity: 0.8;
+	}
+}
+.BM {
+	opacity: 0.6;
+	border-radius: 99px;
+	width: 64px;
+	height: 64px;
 	transition: 0.5s;
-}
-.btn:hover{
-	padding-left: 35px;
-	padding-right: 35px;
-	background-color: rgba(47,161,214,1);
-	color: rgb(255,255,255);
-	box-shadow: rgba(255,255,255,0) 0px 4px 16px;
-	border-radius: 0px;
-	transition: 0.5s;
-}
-.bimg{
-	width:80px;
-	height: 80px;
+	transform: rotateX(0deg);
 	position: absolute;
-	transform: rotateZ(0deg);
-	transition: 1s;
-}
-.bimg:hover{
-	transform: rotateZ(360deg);
-	transition: 1s;
+	top: 100%;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	z-index: 0;
 }

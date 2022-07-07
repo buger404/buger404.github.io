@@ -158,7 +158,7 @@
 	    		<strong style="font-size: 24px;">😵我还在加载中噢...</strong>
     		</div>
 		</div>
-		<div style="width: 100%;padding: 10%;">
+		<div style="width: 100%;padding: 10%;" id="remarks">
 			<div id="gittalk" style="width: 80%;"></div>
 		</div>
 		<div class="prodiv" style="background-image: url('image\\404.jpg');height: 130px;">
@@ -199,11 +199,7 @@
     	var menued = false;
     	function showMenu()
     	{
-    		var m = document.getElementById('menu');
-        	m.style.animationDuration="0.3s";
-        	m.style.animationTimingFunction="linear";
-    		m.style.animationName = menued ? "treein" : "treeout";
-    		var m = document.getElementById('rain');
+    		var m = document.getElementById('remarks');
         	m.style.animationDuration="0.3s";
         	m.style.animationTimingFunction="linear";
     		m.style.animationName = menued ? "treein" : "treeout";
